@@ -11,7 +11,7 @@ Add "compatible" device property for LPCB
 Add "compatible" device property for SATA
 Define some SATA ports
 Add MCHC device
-Add HDAU device
+Add HDAU device and HDMI audio properties
 Add "layout-id" device property for HDEF
 Rename RP04.PXSX to GIGE
 Rename RP05.PXSX to ARPT

@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleIdentifier</key>
-	<string>org.vulgo.ga-h97n-wifi.injector</string>
+	<string>org.vulgo.USBPortInjector</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>ga-h97n-wifi.injector</string>
+	<string>USBPortInjector</string>
 	<key>CFBundlePackageType</key>
 	<string>KEXT</string>
 	<key>CFBundleShortVersionString</key>
@@ -20,52 +20,7 @@
 	<string>1.0</string>
 	<key>IOKitPersonalities</key>
 	<dict>
-		<key>AppleUSBMergeNub: hda-gfx</key>
-		<dict>
-			<key>CFBundleIdentifier</key>
-			<string>com.apple.driver.AppleUSBMergeNub</string>
-			<key>IOClass</key>
-			<string>AppleUSBMergeNub</string>
-			<key>IONameMatch</key>
-			<array>
-				<string>GFX0</string>
-				<string>HDAU</string>
-			</array>
-			<key>IOProviderClass</key>
-			<string>IOPCIDevice</string>
-			<key>IOProviderMergeProperties</key>
-			<dict>
-				<key>hda-gfx</key>
-				<data>w78=</data>
-			</dict>
-		</dict>
-		<key>AppleUSBMergeNub: display connector-type</key>
-		<dict>
-			<key>CFBundleIdentifier</key>
-			<string>com.apple.driver.AppleUSBMergeNub</string>
-			<key>IOClass</key>
-			<string>AppleUSBMergeNub</string>
-			<key>IONameMatch</key>
-			<string>GFX0</string>
-			<key>IOProviderClass</key>
-			<string>IOPCIDevice</string>
-			<key>IOProviderMergeProperties</key>
-			<dict>
-				<key>@0,connector-type</key>
-				<data>AAgAAA==</data>
-				<key>@1,connector-type</key>
-				<data>AAgAAA==</data>
-				<key>@2,connector-type</key>
-				<data>AAgAAA==</data>
-				<key>@3,connector-type</key>
-				<data>AAgAAA==</data>
-				<key>@4,connector-type</key>
-				<data>AAgAAA==</data>
-				<key>@5,connector-type</key>
-				<data>AAgAAA==</data>
-			</dict>
-		</dict>
-		<key>AppleUSBMergeNub: XHC ports</key>
+		<key>GA-H97N-WIFI: USB Ports on XHC</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
 			<string>com.apple.driver.AppleUSBMergeNub</string>

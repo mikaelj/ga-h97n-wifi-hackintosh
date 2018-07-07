@@ -54,10 +54,9 @@ AppleALC.kext is a plug-in of Lilu.kext. If you are not using NVIDIA graphics, a
 
 - FakeSMC.kext is absolutely necessary
 
-#### ga-h97n-wifi.kext
+#### USBPortInjector.kext
 
-- Injector kext for HDMI audio and USB ports
-- Works with the other files in this configuration
+- Codeless injector kext for the XHC device USB ports
 
 #### Lilu.kext
 
@@ -89,7 +88,7 @@ If you are not using any Lilu plug-ins then you do not need Lilu.kext.
 
 #### This repository
 
-[https://github.com/vulgo/ga-h97n-wifi/releases](https://github.com/vulgo/ga-h97n-wifi-hackintosh/releases)
+[https://github.com/vulgo/ga-h97n-wifi-hackintosh/archive/master.zip](https://github.com/vulgo/ga-h97n-wifi-hackintosh/archive/master.zip)
 
 #### AppleALC.kext
 

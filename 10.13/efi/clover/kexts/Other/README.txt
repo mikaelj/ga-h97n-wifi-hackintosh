@@ -1,6 +1,3 @@
-ga-h97n-wifi.kext
+USBPortInjector.kext
 
-This codeless kext injects properties for:
-
-Discrete GPU HDMI audio
-XHC USB ports
+This codeless kext injects properties for the XHC USB ports
