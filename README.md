@@ -54,10 +54,6 @@ AppleALC.kext is a plug-in of Lilu.kext. If you are not using NVIDIA graphics, a
 
 - FakeSMC.kext is absolutely necessary
 
-#### USBPortInjector.kext
-
-- Codeless injector kext for the XHC device USB ports
-
 #### Lilu.kext
 
 - Required by AppleALC.kext
@@ -68,6 +64,10 @@ If you are not using any Lilu plug-ins then you do not need Lilu.kext.
 
 - Ethernet kexts from Mieze
 - Use one of these depending on your hardware
+
+#### USBPortInjector.kext
+
+- Codeless injector kext for the XHC device USB ports
 
 <br />
 <br />
