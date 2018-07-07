@@ -4,7 +4,7 @@
 
 Clover configuration for running macOS on a GA-H97N-WIFI.
 
-![GA-H97N-WIFI](https://github.com/vulgo/ga-h97n-wifi/raw/master/Images/h97n-wifi.png)
+![GA-H97N-WIFI](https://github.com/vulgo/ga-h97n-wifi-hackintosh/raw/master/Images/h97n-wifi.png)
 
 Use for
 
@@ -22,7 +22,7 @@ Do not use for
 ## Firmware Settings
 
 <p align="center">
-<img src="https://github.com/vulgo/ga-h97n-wifi/raw/master/Images/bios.png" width="66%">
+<img src="https://github.com/vulgo/ga-h97n-wifi-hackintosh/raw/master/Images/bios.png" width="66%">
 </p>
 
 Make the following changes after loading Optimized Defaults.
@@ -40,7 +40,7 @@ Not using onboard audio? Disable it.
 ## Kernel Extensions
 
 <p align="center">
-<img src="https://github.com/vulgo/ga-h97n-wifi/raw/master/Images/kexts.png" />
+<img src="https://github.com/vulgo/ga-h97n-wifi-hackintosh/raw/master/Images/kexts.png" />
 </p>
 
 #### AppleALC.kext
@@ -89,7 +89,7 @@ If you are not using any Lilu plug-ins then you do not need Lilu.kext.
 
 #### This repository
 
-[https://github.com/vulgo/ga-h97n-wifi/releases](https://github.com/vulgo/ga-h97n-wifi/releases)
+[https://github.com/vulgo/ga-h97n-wifi/releases](https://github.com/vulgo/ga-h97n-wifi-hackintosh/releases)
 
 #### AppleALC.kext
 
