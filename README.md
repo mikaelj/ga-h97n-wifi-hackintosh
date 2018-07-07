@@ -2,21 +2,16 @@
 
 ## About
 
-Clover configuration for running macOS on a GA-H97N-WIFI.
+Clover configuration for running macOS on the Gigabyte GA-H97N-WIFI motherboard.
 
 <p align="center">
 <img src="https://github.com/vulgo/ga-h97n-wifi-hackintosh/raw/master/Images/h97n-wifi.png" width="72%">
 </p>
 
-Use for
-
-- Discrete graphics AMD/NVIDIA
+- Discrete AMD or NVIDIA graphics
 - Native EFI booting with Clover
 
-Do not use for
-
-- Integrated graphics
-- Legacy, BIOS, CSM etc. booting
+Intel integrated graphics will be disabled with these settings.
 
 <br />
 <br />
