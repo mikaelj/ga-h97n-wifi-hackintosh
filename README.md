@@ -4,7 +4,9 @@
 
 Clover configuration for running macOS on a GA-H97N-WIFI.
 
-![GA-H97N-WIFI](https://github.com/vulgo/ga-h97n-wifi-hackintosh/raw/master/Images/h97n-wifi.png)
+<p align="center">
+<img src="https://github.com/vulgo/ga-h97n-wifi-hackintosh/raw/master/Images/h97n-wifi.png" width="72%">
+</p>
 
 Use for
 
@@ -22,7 +24,7 @@ Do not use for
 ## Firmware Settings
 
 <p align="center">
-<img src="https://github.com/vulgo/ga-h97n-wifi-hackintosh/raw/master/Images/bios.png" width="66%">
+<img src="https://github.com/vulgo/ga-h97n-wifi-hackintosh/raw/master/Images/bios.png" width="58%">
 </p>
 
 Make the following changes after loading Optimized Defaults.
