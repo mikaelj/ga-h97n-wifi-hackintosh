@@ -10,15 +10,6 @@
 		<true/>
 		<key>DSDT</key>
 		<dict>
-			<key>Fixes</key>
-			<dict>
-				<key>FixHPET</key>
-				<true/>
-				<key>FixIPIC</key>
-				<true/>
-				<key>DeleteUnused</key>
-				<true/>
-			</dict>
 			<key>Patches</key>
 			<array>
 				<dict>
