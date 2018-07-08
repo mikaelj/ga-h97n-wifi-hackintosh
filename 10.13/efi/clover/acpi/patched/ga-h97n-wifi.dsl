@@ -5,13 +5,13 @@
  * 
  * Disassembling to symbolic ASL+ operators
  *
- * Disassembly of ga-h97n-wifi.aml, Sat Jul  7 19:50:55 2018
+ * Disassembly of ga-h97n-wifi.aml, Sun Jul  8 11:53:07 2018
  *
  * Original Table Header:
  *     Signature        "SSDT"
- *     Length           0x000008D7 (2263)
+ *     Length           0x00000A8F (2703)
  *     Revision         0x01
- *     Checksum         0xE3
+ *     Checksum         0x5E
  *     OEM ID           "vulgo"
  *     OEM Table ID     "h97nwifi"
  *     OEM Revision     0x0000FFFF (65535)
@@ -25,7 +25,11 @@ DefinitionBlock ("", "SSDT", 1, "vulgo", "h97nwifi", 0x0000FFFF)
     External (_SB_.PAGD, DeviceObj)
     External (_SB_.PCI0, DeviceObj)
     External (_SB_.PCI0.ADSP, DeviceObj)
+    External (_SB_.PCI0.B0D3, DeviceObj)
+    External (_SB_.PCI0.B0D4, DeviceObj)
     External (_SB_.PCI0.DOCK, DeviceObj)
+    External (_SB_.PCI0.EHC1, DeviceObj)
+    External (_SB_.PCI0.EHC2, DeviceObj)
     External (_SB_.PCI0.GPI0, DeviceObj)
     External (_SB_.PCI0.HDEF, DeviceObj)
     External (_SB_.PCI0.I2C0, DeviceObj)
@@ -45,10 +49,17 @@ DefinitionBlock ("", "SSDT", 1, "vulgo", "h97nwifi", 0x0000FFFF)
     External (_SB_.PCI0.LPCB.UAR1, DeviceObj)
     External (_SB_.PCI0.P0P2, DeviceObj)
     External (_SB_.PCI0.P0P2.GFX0, DeviceObj)
+    External (_SB_.PCI0.PEG1, DeviceObj)
+    External (_SB_.PCI0.PEG2, DeviceObj)
+    External (_SB_.PCI0.RP02, DeviceObj)
+    External (_SB_.PCI0.RP03, DeviceObj)
     External (_SB_.PCI0.RP04, DeviceObj)
     External (_SB_.PCI0.RP04.PXSX, DeviceObj)
     External (_SB_.PCI0.RP05, DeviceObj)
     External (_SB_.PCI0.RP05.PXSX, DeviceObj)
+    External (_SB_.PCI0.RP06, DeviceObj)
+    External (_SB_.PCI0.RP07, DeviceObj)
+    External (_SB_.PCI0.RP08, DeviceObj)
     External (_SB_.PCI0.SAT1, DeviceObj)
     External (_SB_.PCI0.SATA, DeviceObj)
     External (_SB_.PCI0.SATA.NVM0, DeviceObj)
@@ -419,7 +430,27 @@ DefinitionBlock ("", "SSDT", 1, "vulgo", "h97nwifi", 0x0000FFFF)
         Name (_STA, Zero)  // _STA: Status
     }
 
+    Scope (_SB.PCI0.B0D3)
+    {
+        Name (_STA, Zero)  // _STA: Status
+    }
+
+    Scope (_SB.PCI0.B0D4)
+    {
+        Name (_STA, Zero)  // _STA: Status
+    }
+
     Scope (_SB.PCI0.DOCK)
+    {
+        Name (_STA, Zero)  // _STA: Status
+    }
+
+    Scope (_SB.PCI0.EHC1)
+    {
+        Name (_STA, Zero)  // _STA: Status
+    }
+
+    Scope (_SB.PCI0.EHC2)
     {
         Name (_STA, Zero)  // _STA: Status
     }
@@ -440,6 +471,41 @@ DefinitionBlock ("", "SSDT", 1, "vulgo", "h97nwifi", 0x0000FFFF)
     }
 
     Scope (_SB.PCI0.IGPU)
+    {
+        Name (_STA, Zero)  // _STA: Status
+    }
+
+    Scope (_SB.PCI0.PEG1)
+    {
+        Name (_STA, Zero)  // _STA: Status
+    }
+
+    Scope (_SB.PCI0.PEG2)
+    {
+        Name (_STA, Zero)  // _STA: Status
+    }
+
+    Scope (_SB.PCI0.RP02)
+    {
+        Name (_STA, Zero)  // _STA: Status
+    }
+
+    Scope (_SB.PCI0.RP03)
+    {
+        Name (_STA, Zero)  // _STA: Status
+    }
+
+    Scope (_SB.PCI0.RP06)
+    {
+        Name (_STA, Zero)  // _STA: Status
+    }
+
+    Scope (_SB.PCI0.RP07)
+    {
+        Name (_STA, Zero)  // _STA: Status
+    }
+
+    Scope (_SB.PCI0.RP08)
     {
         Name (_STA, Zero)  // _STA: Status
     }
