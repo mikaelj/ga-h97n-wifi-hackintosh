@@ -18,6 +18,7 @@ Rename RP05.PXSX to ARPT
 Add dummy EC device for AppleBusPowerController
 Add SBUS device properties and BUS0 device
 Define or redefine many _STA objects
+Redefine _PTS and _WAK
 
 Sources
 
