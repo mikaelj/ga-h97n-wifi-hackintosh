@@ -5,13 +5,13 @@
  * 
  * Disassembling to symbolic ASL+ operators
  *
- * Disassembly of ga-h97n-wifi.aml, Sun Jul  8 11:53:07 2018
+ * Disassembly of ga-h97n-wifi.aml, Sun Jul  8 13:28:10 2018
  *
  * Original Table Header:
  *     Signature        "SSDT"
- *     Length           0x00000A8F (2703)
+ *     Length           0x00000B4E (2894)
  *     Revision         0x01
- *     Checksum         0x5E
+ *     Checksum         0xC6
  *     OEM ID           "vulgo"
  *     OEM Table ID     "h97nwifi"
  *     OEM Revision     0x0000FFFF (65535)
@@ -91,17 +91,6 @@ DefinitionBlock ("", "SSDT", 1, "vulgo", "h97nwifi", 0x0000FFFF)
                 "Windows 2012"
             }
         Return ((Ones != Match (Local0, MEQ, Arg0, MTR, Zero, Zero)))
-    }
-
-    Scope (\_TZ)
-    {
-        ThermalZone (TZ00)
-        {
-        }
-
-        ThermalZone (TZ01)
-        {
-        }
     }
 
     Scope (_SB.PCI0)
@@ -424,6 +413,18 @@ DefinitionBlock ("", "SSDT", 1, "vulgo", "h97nwifi", 0x0000FFFF)
 
         Scope (PAGD)
         {
+            Name (_STA, Zero)  // _STA: Status
+        }
+
+        Device (TZ00)
+        {
+            Name (_HID, EisaId ("PNP0C02") /* PNP Motherboard Resources */)  // _HID: Hardware ID
+            Name (_STA, Zero)  // _STA: Status
+        }
+
+        Device (TZ01)
+        {
+            Name (_HID, EisaId ("PNP0C02") /* PNP Motherboard Resources */)  // _HID: Hardware ID
             Name (_STA, Zero)  // _STA: Status
         }
     }
