@@ -5,13 +5,13 @@
  * 
  * Disassembling to symbolic ASL+ operators
  *
- * Disassembly of ga-h97n-wifi.aml, Sun Jul  8 13:28:10 2018
+ * Disassembly of ga-h97n-wifi.aml, Sun Jul  8 18:04:07 2018
  *
  * Original Table Header:
  *     Signature        "SSDT"
- *     Length           0x00000B4E (2894)
+ *     Length           0x00000B5C (2908)
  *     Revision         0x01
- *     Checksum         0xC6
+ *     Checksum         0xDB
  *     OEM ID           "vulgo"
  *     OEM Table ID     "h97nwifi"
  *     OEM Revision     0x0000FFFF (65535)
@@ -80,7 +80,7 @@ DefinitionBlock ("", "SSDT", 1, "vulgo", "h97nwifi", 0x0000FFFF)
 
     Method (XOSI, 1, NotSerialized)
     {
-        Local0 = Package (0x07)
+        Local0 = Package (0x08)
             {
                 "Windows", 
                 "Windows 2001", 
@@ -88,7 +88,8 @@ DefinitionBlock ("", "SSDT", 1, "vulgo", "h97nwifi", 0x0000FFFF)
                 "Windows 2006", 
                 "Windows 2006 SP1", 
                 "Windows 2009", 
-                "Windows 2012"
+                "Windows 2012", 
+                "Windows 2013"
             }
         Return ((Ones != Match (Local0, MEQ, Arg0, MTR, Zero, Zero)))
     }
