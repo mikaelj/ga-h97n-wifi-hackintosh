@@ -39,6 +39,22 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
+					<string>Rename _PTS to XPTS</string>
+					<key>Find</key>
+					<data>X1BUUw==</data>
+					<key>Replace</key>
+					<data>WFBUUw==</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>Rename _WAK to XWAK</string>
+					<key>Find</key>
+					<data>X1dBSw==</data>
+					<key>Replace</key>
+					<data>WFdBSw==</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
 					<string>Rename HECI to IMEI</string>
 					<key>Find</key>
 					<data>SEVDSQ==</data>

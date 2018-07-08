@@ -46,6 +46,8 @@ DefinitionBlock ("", "SSDT", 1, "vulgo", "h97nwifi", 0x0000FFFF)
     External (_SB_.PCI0.LPCB.PS2M, DeviceObj)
     External (_SB_.PCI0.LPCB.RMSC, DeviceObj)
     External (_SB_.PCI0.LPCB.SIO1, DeviceObj)
+    External (_SB_.PCI0.LPCB.SPTS, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.LPCB.SWAK, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.LPCB.UAR1, DeviceObj)
     External (_SB_.PCI0.P0P2, DeviceObj)
     External (_SB_.PCI0.P0P2.GFX0, DeviceObj)
@@ -72,6 +74,7 @@ DefinitionBlock ("", "SSDT", 1, "vulgo", "h97nwifi", 0x0000FFFF)
     External (_SB_.PCI0.TPMX, DeviceObj)
     External (_SB_.PCI0.UA00, DeviceObj)
     External (_SB_.PCI0.UA01, DeviceObj)
+    External (_SB_.PCI0.XHC_.XSEL, MethodObj)    // 0 Arguments
     External (DFUD, DeviceObj)
     External (NFC_, DeviceObj)
 
@@ -548,6 +551,29 @@ DefinitionBlock ("", "SSDT", 1, "vulgo", "h97nwifi", 0x0000FFFF)
     Scope (_SB.PCI0.UA01)
     {
         Name (_STA, Zero)  // _STA: Status
+    }
+
+    Method (_PTS, 1, NotSerialized)  // _PTS: Prepare To Sleep
+    {
+        If (((Arg0 == 0x03) || (Arg0 == 0x04)))
+        {
+            \_SB.PCI0.LPCB.SPTS ()
+        }
+    }
+
+    Method (_WAK, 1, Serialized)  // _WAK: Wake
+    {
+        If (((Arg0 == 0x03) || (Arg0 == 0x04)))
+        {
+            \_SB.PCI0.LPCB.SWAK ()
+            \_SB.PCI0.XHC.XSEL ()
+        }
+
+        Return (Package (0x02)
+        {
+            Zero, 
+            Zero
+        })
     }
 }
 
