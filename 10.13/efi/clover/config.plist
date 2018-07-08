@@ -125,8 +125,6 @@
 	<dict>
 		<key>Scan</key>
 		<true/>
-		<key>TextOnly</key>
-		<true/>
 	</dict>
 	<key>Graphics</key>
 	<dict>
