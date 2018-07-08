@@ -20,9 +20,9 @@ Directories are shown here in UPPERCASE, it's not a requirement
         │   └── OTHER
         │       ├── AppleALC.kext
         │       ├── FakeSMC.kext
-        │       ├── USBPortInjector.kext
         │       ├── Lilu.kext
-        │       └── RealtekRTL8111.kext or AtherosE2200Ethernet.kext *
+        │       ├── RealtekRTL8111.kext or AtherosE2200Ethernet.kext *
+        │       └── USBPortInjector.kext
         ├── MISC
         └── TOOLS
             ├── Shell.inf
