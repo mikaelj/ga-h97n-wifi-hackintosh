@@ -129,8 +129,6 @@
 		<true/>
 		<key>NeverHibernate</key>
 		<true/>
-		<key>Timeout</key>
-		<integer>5</integer>
 	</dict>
 	<key>GUI</key>
 	<dict>
