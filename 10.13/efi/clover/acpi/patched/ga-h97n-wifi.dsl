@@ -5,13 +5,13 @@
  * 
  * Disassembling to symbolic ASL+ operators
  *
- * Disassembly of ga-h97n-wifi.aml, Sun Jul  8 18:04:07 2018
+ * Disassembly of ga-h97n-wifi.aml, Mon Jul  9 16:02:27 2018
  *
  * Original Table Header:
  *     Signature        "SSDT"
- *     Length           0x00000B5C (2908)
+ *     Length           0x00000B97 (2967)
  *     Revision         0x01
- *     Checksum         0xDB
+ *     Checksum         0x86
  *     OEM ID           "vulgo"
  *     OEM Table ID     "h97nwifi"
  *     OEM Revision     0x0000FFFF (65535)
@@ -319,6 +319,28 @@ DefinitionBlock ("", "SSDT", 1, "vulgo", "h97nwifi", 0x0000FFFF)
         {
             Name (_HID, EisaId ("PNP0C02") /* PNP Motherboard Resources */)  // _HID: Hardware ID
             Name (_STA, One)  // _STA: Status
+            Name (_UID, One)  // _UID: Unique ID
+            Name (_GPE, 0x17)  // _GPE: General Purpose Events
+            Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
+            {
+                IO (Decode16,
+                    0x0062,             // Range Minimum
+                    0x0062,             // Range Maximum
+                    0x00,               // Alignment
+                    0x01,               // Length
+                    )
+                IO (Decode16,
+                    0x0066,             // Range Minimum
+                    0x0066,             // Range Maximum
+                    0x00,               // Alignment
+                    0x01,               // Length
+                    )
+            })
+            Name (_PRW, Package (0x02)  // _PRW: Power Resources for Wake
+            {
+                0x23, 
+                0x03
+            })
         }
 
         Scope (CWDT)
