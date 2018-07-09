@@ -14,15 +14,15 @@
 			<array>
 				<dict>
 					<key>Comment</key>
-					<string>Rename _OSI to XOSI</string>
+					<string>Rename _OSI to OOSI</string>
 					<key>Find</key>
 					<data>X09TSQ==</data>
 					<key>Replace</key>
-					<data>WE9TSQ==</data>
+					<data>T09TSQ==</data>
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>Rename _STA to XSTA</string>
+					<string>Rename _STA to OSTA</string>
 					<key>Find</key>
 					<data>X1NUQQ==</data>
 					<key>Replace</key>
@@ -30,19 +30,19 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>Rename _PTS to XPTS</string>
+					<string>Rename _PTS to OPTS</string>
 					<key>Find</key>
 					<data>X1BUUw==</data>
 					<key>Replace</key>
-					<data>WFBUUw==</data>
+					<data>T1BUUw==</data>
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>Rename _WAK to XWAK</string>
+					<string>Rename _WAK to OWAK</string>
 					<key>Find</key>
 					<data>X1dBSw==</data>
 					<key>Replace</key>
-					<data>WFdBSw==</data>
+					<data>T1dBSw==</data>
 				</dict>
 				<dict>
 					<key>Comment</key>

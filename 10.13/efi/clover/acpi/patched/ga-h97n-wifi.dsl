@@ -5,13 +5,13 @@
  * 
  * Disassembling to symbolic ASL+ operators
  *
- * Disassembly of ga-h97n-wifi.aml, Mon Jul  9 16:02:27 2018
+ * Disassembly of ga-h97n-wifi.aml, Mon Jul  9 20:07:49 2018
  *
  * Original Table Header:
  *     Signature        "SSDT"
  *     Length           0x00000B97 (2967)
  *     Revision         0x01
- *     Checksum         0x86
+ *     Checksum         0x8F
  *     OEM ID           "vulgo"
  *     OEM Table ID     "h97nwifi"
  *     OEM Revision     0x0000FFFF (65535)
@@ -78,7 +78,7 @@ DefinitionBlock ("", "SSDT", 1, "vulgo", "h97nwifi", 0x0000FFFF)
     External (DFUD, DeviceObj)
     External (NFC_, DeviceObj)
 
-    Method (XOSI, 1, NotSerialized)
+    Method (OOSI, 1, NotSerialized)
     {
         Local0 = Package (0x08)
             {
