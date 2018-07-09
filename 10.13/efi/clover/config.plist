@@ -92,6 +92,30 @@
 					<key>Replace</key>
 					<data>SUdCRQ==</data>
 				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>Rename _PRW to OPRW</string>
+					<key>Find</key>
+					<data>X1BSVw==</data>
+					<key>Replace</key>
+					<data>T1BSVw==</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>Rename _L09 to OL09</string>
+					<key>Find</key>
+					<data>X0wwOQ==</data>
+					<key>Replace</key>
+					<data>T0wwOQ==</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>Rename _L0D to OL0D</string>
+					<key>Find</key>
+					<data>X0wwRA==</data>
+					<key>Replace</key>
+					<data>T0wwRA==</data>
+				</dict>
 			</array>
 		</dict>
 		<key>DropTables</key>
