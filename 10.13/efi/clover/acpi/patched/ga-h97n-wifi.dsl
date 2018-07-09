@@ -5,13 +5,13 @@
  * 
  * Disassembling to symbolic ASL+ operators
  *
- * Disassembly of ga-h97n-wifi.aml, Mon Jul  9 20:07:49 2018
+ * Disassembly of ga-h97n-wifi.aml, Mon Jul  9 21:51:48 2018
  *
  * Original Table Header:
  *     Signature        "SSDT"
- *     Length           0x00000B97 (2967)
+ *     Length           0x00000C1E (3102)
  *     Revision         0x01
- *     Checksum         0x8F
+ *     Checksum         0xF1
  *     OEM ID           "vulgo"
  *     OEM Table ID     "h97nwifi"
  *     OEM Revision     0x0000FFFF (65535)
@@ -74,9 +74,23 @@ DefinitionBlock ("", "SSDT", 1, "vulgo", "h97nwifi", 0x0000FFFF)
     External (_SB_.PCI0.TPMX, DeviceObj)
     External (_SB_.PCI0.UA00, DeviceObj)
     External (_SB_.PCI0.UA01, DeviceObj)
+    External (_SB_.PCI0.XHC_, DeviceObj)
     External (_SB_.PCI0.XHC_.XSEL, MethodObj)    // 0 Arguments
     External (DFUD, DeviceObj)
     External (NFC_, DeviceObj)
+
+    Scope (_GPE)
+    {
+        Method (_L09, 0, NotSerialized)  // _Lxx: Level-Triggered GPE
+        {
+            Notify (\_SB.PCI0.RP04.GIGE, 0x02) // Device Wake
+        }
+
+        Method (_L0D, 0, NotSerialized)  // _Lxx: Level-Triggered GPE
+        {
+            Notify (\_SB.PCI0.XHC, 0x02) // Device Wake
+        }
+    }
 
     Method (OOSI, 1, NotSerialized)
     {
@@ -99,6 +113,29 @@ DefinitionBlock ("", "SSDT", 1, "vulgo", "h97nwifi", 0x0000FFFF)
         Device (MCHC)
         {
             Name (_ADR, Zero)  // _ADR: Address
+        }
+    }
+
+    Scope (_SB.PCI0.HDEF)
+    {
+        Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+        {
+            If ((Arg2 == Zero))
+            {
+                Return (Buffer (One)
+                {
+                     0x03                                             // .
+                })
+            }
+
+            Return (Package (0x02)
+            {
+                "layout-id", 
+                Buffer (0x04)
+                {
+                     0x03, 0x00, 0x00, 0x00                           // ....
+                }
+            })
         }
     }
 
@@ -188,26 +225,34 @@ DefinitionBlock ("", "SSDT", 1, "vulgo", "h97nwifi", 0x0000FFFF)
         }
     }
 
-    Scope (_SB.PCI0.HDEF)
+    Scope (_SB.PCI0.RP04)
     {
-        Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+        Scope (PXSX)
         {
-            If ((Arg2 == Zero))
-            {
-                Return (Buffer (One)
-                {
-                     0x03                                             // .
-                })
-            }
+            Name (_STA, Zero)  // _STA: Status
+        }
 
-            Return (Package (0x02)
+        Device (GIGE)
+        {
+            Name (_ADR, Zero)  // _ADR: Address
+            Name (_PRW, Package (0x02)  // _PRW: Power Resources for Wake
             {
-                "layout-id", 
-                Buffer (0x04)
-                {
-                     0x03, 0x00, 0x00, 0x00                           // ....
-                }
+                0x09, 
+                0x03
             })
+        }
+    }
+
+    Scope (_SB.PCI0.RP05)
+    {
+        Scope (PXSX)
+        {
+            Name (_STA, Zero)  // _STA: Status
+        }
+
+        Device (ARPT)
+        {
+            Name (_ADR, Zero)  // _ADR: Address
         }
     }
 
@@ -246,35 +291,13 @@ DefinitionBlock ("", "SSDT", 1, "vulgo", "h97nwifi", 0x0000FFFF)
         }
     }
 
-    Scope (_SB.PCI0.SAT1)
+    Scope (_SB.PCI0.XHC)
     {
-        Name (_STA, Zero)  // _STA: Status
-    }
-
-    Scope (_SB.PCI0.RP04)
-    {
-        Scope (PXSX)
+        Name (_PRW, Package (0x02)  // _PRW: Power Resources for Wake
         {
-            Name (_STA, Zero)  // _STA: Status
-        }
-
-        Device (GIGE)
-        {
-            Name (_ADR, Zero)  // _ADR: Address
-        }
-    }
-
-    Scope (_SB.PCI0.RP05)
-    {
-        Scope (PXSX)
-        {
-            Name (_STA, Zero)  // _STA: Status
-        }
-
-        Device (ARPT)
-        {
-            Name (_ADR, Zero)  // _ADR: Address
-        }
+            0x0D, 
+            0x03
+        })
     }
 
     Scope (_SB.PCI0.LPCB)
@@ -292,27 +315,8 @@ DefinitionBlock ("", "SSDT", 1, "vulgo", "h97nwifi", 0x0000FFFF)
             Return (Package (0x02)
             {
                 "compatible", 
-                "pci8086,8c44"
+                "pci8086,9c43"
             })
-        }
-
-        Scope (H_EC)
-        {
-            Name (_STA, Zero)  // _STA: Status
-            Scope (BAT0)
-            {
-                Name (_STA, Zero)  // _STA: Status
-            }
-
-            Scope (BAT1)
-            {
-                Name (_STA, Zero)  // _STA: Status
-            }
-
-            Scope (BAT2)
-            {
-                Name (_STA, Zero)  // _STA: Status
-            }
         }
 
         Device (EC)
@@ -341,41 +345,6 @@ DefinitionBlock ("", "SSDT", 1, "vulgo", "h97nwifi", 0x0000FFFF)
                 0x23, 
                 0x03
             })
-        }
-
-        Scope (CWDT)
-        {
-            Name (_STA, Zero)  // _STA: Status
-        }
-
-        Scope (LDR2)
-        {
-            Name (_STA, Zero)  // _STA: Status
-        }
-
-        Scope (PS2K)
-        {
-            Name (_STA, Zero)  // _STA: Status
-        }
-
-        Scope (PS2M)
-        {
-            Name (_STA, Zero)  // _STA: Status
-        }
-
-        Scope (RMSC)
-        {
-            Name (_STA, Zero)  // _STA: Status
-        }
-
-        Scope (SIO1)
-        {
-            Name (_STA, Zero)  // _STA: Status
-        }
-
-        Scope (UAR1)
-        {
-            Name (_STA, Zero)  // _STA: Status
         }
     }
 
@@ -408,6 +377,29 @@ DefinitionBlock ("", "SSDT", 1, "vulgo", "h97nwifi", 0x0000FFFF)
                 }
             }
         }
+    }
+
+    Method (_PTS, 1, NotSerialized)  // _PTS: Prepare To Sleep
+    {
+        If (((Arg0 == 0x03) || (Arg0 == 0x04)))
+        {
+            \_SB.PCI0.LPCB.SPTS ()
+        }
+    }
+
+    Method (_WAK, 1, Serialized)  // _WAK: Wake
+    {
+        If (((Arg0 == 0x03) || (Arg0 == 0x04)))
+        {
+            \_SB.PCI0.LPCB.SWAK ()
+            \_SB.PCI0.XHC.XSEL ()
+        }
+
+        Return (Package (0x02)
+        {
+            Zero, 
+            Zero
+        })
     }
 
     Scope (\)
@@ -503,6 +495,63 @@ DefinitionBlock ("", "SSDT", 1, "vulgo", "h97nwifi", 0x0000FFFF)
         Name (_STA, Zero)  // _STA: Status
     }
 
+    Scope (_SB.PCI0.LPCB)
+    {
+        Scope (CWDT)
+        {
+            Name (_STA, Zero)  // _STA: Status
+        }
+
+        Scope (H_EC)
+        {
+            Name (_STA, Zero)  // _STA: Status
+            Scope (BAT0)
+            {
+                Name (_STA, Zero)  // _STA: Status
+            }
+
+            Scope (BAT1)
+            {
+                Name (_STA, Zero)  // _STA: Status
+            }
+
+            Scope (BAT2)
+            {
+                Name (_STA, Zero)  // _STA: Status
+            }
+        }
+
+        Scope (LDR2)
+        {
+            Name (_STA, Zero)  // _STA: Status
+        }
+
+        Scope (PS2K)
+        {
+            Name (_STA, Zero)  // _STA: Status
+        }
+
+        Scope (PS2M)
+        {
+            Name (_STA, Zero)  // _STA: Status
+        }
+
+        Scope (RMSC)
+        {
+            Name (_STA, Zero)  // _STA: Status
+        }
+
+        Scope (SIO1)
+        {
+            Name (_STA, Zero)  // _STA: Status
+        }
+
+        Scope (UAR1)
+        {
+            Name (_STA, Zero)  // _STA: Status
+        }
+    }
+
     Scope (_SB.PCI0.PEG1)
     {
         Name (_STA, Zero)  // _STA: Status
@@ -534,6 +583,11 @@ DefinitionBlock ("", "SSDT", 1, "vulgo", "h97nwifi", 0x0000FFFF)
     }
 
     Scope (_SB.PCI0.RP08)
+    {
+        Name (_STA, Zero)  // _STA: Status
+    }
+
+    Scope (_SB.PCI0.SAT1)
     {
         Name (_STA, Zero)  // _STA: Status
     }
@@ -576,29 +630,6 @@ DefinitionBlock ("", "SSDT", 1, "vulgo", "h97nwifi", 0x0000FFFF)
     Scope (_SB.PCI0.UA01)
     {
         Name (_STA, Zero)  // _STA: Status
-    }
-
-    Method (_PTS, 1, NotSerialized)  // _PTS: Prepare To Sleep
-    {
-        If (((Arg0 == 0x03) || (Arg0 == 0x04)))
-        {
-            \_SB.PCI0.LPCB.SPTS ()
-        }
-    }
-
-    Method (_WAK, 1, Serialized)  // _WAK: Wake
-    {
-        If (((Arg0 == 0x03) || (Arg0 == 0x04)))
-        {
-            \_SB.PCI0.LPCB.SWAK ()
-            \_SB.PCI0.XHC.XSEL ()
-        }
-
-        Return (Package (0x02)
-        {
-            Zero, 
-            Zero
-        })
     }
 }
 
