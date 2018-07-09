@@ -5,13 +5,13 @@
  * 
  * Disassembling to symbolic ASL+ operators
  *
- * Disassembly of ga-h97n-wifi.aml, Mon Jul  9 21:51:48 2018
+ * Disassembly of ga-h97n-wifi.aml, Mon Jul  9 22:20:34 2018
  *
  * Original Table Header:
  *     Signature        "SSDT"
- *     Length           0x00000C1E (3102)
+ *     Length           0x00000C41 (3137)
  *     Revision         0x01
- *     Checksum         0xF1
+ *     Checksum         0x3C
  *     OEM ID           "vulgo"
  *     OEM Table ID     "h97nwifi"
  *     OEM Revision     0x0000FFFF (65535)
@@ -84,6 +84,7 @@ DefinitionBlock ("", "SSDT", 1, "vulgo", "h97nwifi", 0x0000FFFF)
         Method (_L09, 0, NotSerialized)  // _Lxx: Level-Triggered GPE
         {
             Notify (\_SB.PCI0.RP04.GIGE, 0x02) // Device Wake
+            Notify (\_SB.PCI0.RP05.ARPT, 0x02) // Device Wake
         }
 
         Method (_L0D, 0, NotSerialized)  // _Lxx: Level-Triggered GPE
@@ -253,6 +254,11 @@ DefinitionBlock ("", "SSDT", 1, "vulgo", "h97nwifi", 0x0000FFFF)
         Device (ARPT)
         {
             Name (_ADR, Zero)  // _ADR: Address
+            Name (_PRW, Package (0x02)  // _PRW: Power Resources for Wake
+            {
+                0x09, 
+                0x03
+            })
         }
     }
 
