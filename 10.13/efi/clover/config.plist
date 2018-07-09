@@ -84,6 +84,14 @@
 					<key>Replace</key>
 					<data>U0FUQQ==</data>
 				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>Rename GLAN to IGBE</string>
+					<key>Find</key>
+					<data>R0xBTg==</data>
+					<key>Replace</key>
+					<data>SUdCRQ==</data>
+				</dict>
 			</array>
 		</dict>
 		<key>DropTables</key>
