@@ -36,12 +36,12 @@ DefinitionBlock ("", "SSDT", 1, "vulgo", "h97nwifi", 0x0000FFFF)
     External (_SB_.PCI0.I2C1, DeviceObj)
     External (_SB_.PCI0.IGPU, DeviceObj)
     External (_SB_.PCI0.LPCB, DeviceObj)
+    External (_SB_.PCI0.LPCB.CWDT, DeviceObj)
     External (_SB_.PCI0.LPCB.H_EC, DeviceObj)
     External (_SB_.PCI0.LPCB.H_EC.BAT0, DeviceObj)
     External (_SB_.PCI0.LPCB.H_EC.BAT1, DeviceObj)
     External (_SB_.PCI0.LPCB.H_EC.BAT2, DeviceObj)
     External (_SB_.PCI0.LPCB.LDR2, DeviceObj)
-    External (_SB_.PCI0.LPCB.LDRC, DeviceObj)
     External (_SB_.PCI0.LPCB.PS2K, DeviceObj)
     External (_SB_.PCI0.LPCB.PS2M, DeviceObj)
     External (_SB_.PCI0.LPCB.RMSC, DeviceObj)
@@ -321,12 +321,12 @@ DefinitionBlock ("", "SSDT", 1, "vulgo", "h97nwifi", 0x0000FFFF)
             Name (_STA, One)  // _STA: Status
         }
 
-        Scope (LDR2)
+        Scope (CWDT)
         {
             Name (_STA, Zero)  // _STA: Status
         }
 
-        Scope (LDRC)
+        Scope (LDR2)
         {
             Name (_STA, Zero)  // _STA: Status
         }
@@ -363,10 +363,11 @@ DefinitionBlock ("", "SSDT", 1, "vulgo", "h97nwifi", 0x0000FFFF)
         {
             Name (_CID, "smbus")  // _CID: Compatible ID
             Name (_ADR, Zero)  // _ADR: Address
-            Device (DVL0)
+            Device (BLC0)
             {
-                Name (_ADR, 0x57)  // _ADR: Address
-                Name (_CID, "diagsvault")  // _CID: Compatible ID
+                Name (_ADR, Zero)  // _ADR: Address
+                Name (_STA, 0x0F)  // _STA: Status
+                Name (_CID, "smbus-blc")  // _CID: Compatible ID
                 Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
                 {
                     If ((Arg2 == Zero))
@@ -380,7 +381,7 @@ DefinitionBlock ("", "SSDT", 1, "vulgo", "h97nwifi", 0x0000FFFF)
                     Return (Package (0x02)
                     {
                         "address", 
-                        0x57
+                        0x2C
                     })
                 }
             }
