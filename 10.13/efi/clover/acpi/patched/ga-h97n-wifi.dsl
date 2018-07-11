@@ -5,13 +5,13 @@
  * 
  * Disassembling to symbolic ASL+ operators
  *
- * Disassembly of /git/ga-h97n-wifi-hackintosh/10.13/efi/clover/acpi/patched/ga-h97n-wifi.aml, Wed Jul 11 23:20:47 2018
+ * Disassembly of ga-h97n-wifi.aml, Wed Jul 11 23:28:20 2018
  *
  * Original Table Header:
  *     Signature        "SSDT"
- *     Length           0x00000B60 (2912)
+ *     Length           0x00000B79 (2937)
  *     Revision         0x01
- *     Checksum         0x51
+ *     Checksum         0x37
  *     OEM ID           "vulgo"
  *     OEM Table ID     "h97nwifi"
  *     OEM Revision     0x0000FFFF (65535)
@@ -216,6 +216,16 @@ DefinitionBlock ("", "SSDT", 1, "vulgo", "h97nwifi", 0x0000FFFF)
         Scope (PXSX)
         {
             Name (_STA, Zero)  // _STA: Status
+        }
+
+        Device (GIGE)
+        {
+            Name (_ADR, Zero)  // _ADR: Address
+            Name (_PRW, Package (0x02)  // _PRW: Power Resources for Wake
+            {
+                0x09, 
+                0x03
+            })
         }
     }
 
