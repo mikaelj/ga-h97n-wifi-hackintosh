@@ -5,13 +5,13 @@
  * 
  * Disassembling to symbolic ASL+ operators
  *
- * Disassembly of ga-h97n-wifi.aml, Mon Jul  9 22:20:34 2018
+ * Disassembly of /git/ga-h97n-wifi-hackintosh/10.13/efi/clover/acpi/patched/ga-h97n-wifi.aml, Wed Jul 11 23:20:47 2018
  *
  * Original Table Header:
  *     Signature        "SSDT"
- *     Length           0x00000C41 (3137)
+ *     Length           0x00000B60 (2912)
  *     Revision         0x01
- *     Checksum         0x3C
+ *     Checksum         0x51
  *     OEM ID           "vulgo"
  *     OEM Table ID     "h97nwifi"
  *     OEM Revision     0x0000FFFF (65535)
@@ -34,7 +34,6 @@ DefinitionBlock ("", "SSDT", 1, "vulgo", "h97nwifi", 0x0000FFFF)
     External (_SB_.PCI0.HDEF, DeviceObj)
     External (_SB_.PCI0.I2C0, DeviceObj)
     External (_SB_.PCI0.I2C1, DeviceObj)
-    External (_SB_.PCI0.IGPU, DeviceObj)
     External (_SB_.PCI0.LPCB, DeviceObj)
     External (_SB_.PCI0.LPCB.CWDT, DeviceObj)
     External (_SB_.PCI0.LPCB.H_EC, DeviceObj)
@@ -49,6 +48,7 @@ DefinitionBlock ("", "SSDT", 1, "vulgo", "h97nwifi", 0x0000FFFF)
     External (_SB_.PCI0.LPCB.SPTS, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.LPCB.SWAK, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.LPCB.UAR1, DeviceObj)
+    External (_SB_.PCI0.OFX0, DeviceObj)
     External (_SB_.PCI0.P0P2, DeviceObj)
     External (_SB_.PCI0.P0P2.GFX0, DeviceObj)
     External (_SB_.PCI0.PEG1, DeviceObj)
@@ -62,9 +62,9 @@ DefinitionBlock ("", "SSDT", 1, "vulgo", "h97nwifi", 0x0000FFFF)
     External (_SB_.PCI0.RP06, DeviceObj)
     External (_SB_.PCI0.RP07, DeviceObj)
     External (_SB_.PCI0.RP08, DeviceObj)
+    External (_SB_.PCI0.SAT0, DeviceObj)
+    External (_SB_.PCI0.SAT0.NVM0, DeviceObj)
     External (_SB_.PCI0.SAT1, DeviceObj)
-    External (_SB_.PCI0.SATA, DeviceObj)
-    External (_SB_.PCI0.SATA.NVM0, DeviceObj)
     External (_SB_.PCI0.SBUS, DeviceObj)
     External (_SB_.PCI0.SDHC, DeviceObj)
     External (_SB_.PCI0.SDMA, DeviceObj)
@@ -75,23 +75,8 @@ DefinitionBlock ("", "SSDT", 1, "vulgo", "h97nwifi", 0x0000FFFF)
     External (_SB_.PCI0.UA00, DeviceObj)
     External (_SB_.PCI0.UA01, DeviceObj)
     External (_SB_.PCI0.XHC_, DeviceObj)
-    External (_SB_.PCI0.XHC_.XSEL, MethodObj)    // 0 Arguments
     External (DFUD, DeviceObj)
     External (NFC_, DeviceObj)
-
-    Scope (_GPE)
-    {
-        Method (_L09, 0, NotSerialized)  // _Lxx: Level-Triggered GPE
-        {
-            Notify (\_SB.PCI0.RP04.GIGE, 0x02) // Device Wake
-            Notify (\_SB.PCI0.RP05.ARPT, 0x02) // Device Wake
-        }
-
-        Method (_L0D, 0, NotSerialized)  // _Lxx: Level-Triggered GPE
-        {
-            Notify (\_SB.PCI0.XHC, 0x02) // Device Wake
-        }
-    }
 
     Method (OOSI, 1, NotSerialized)
     {
@@ -232,16 +217,6 @@ DefinitionBlock ("", "SSDT", 1, "vulgo", "h97nwifi", 0x0000FFFF)
         {
             Name (_STA, Zero)  // _STA: Status
         }
-
-        Device (GIGE)
-        {
-            Name (_ADR, Zero)  // _ADR: Address
-            Name (_PRW, Package (0x02)  // _PRW: Power Resources for Wake
-            {
-                0x09, 
-                0x03
-            })
-        }
     }
 
     Scope (_SB.PCI0.RP05)
@@ -254,16 +229,12 @@ DefinitionBlock ("", "SSDT", 1, "vulgo", "h97nwifi", 0x0000FFFF)
         Device (ARPT)
         {
             Name (_ADR, Zero)  // _ADR: Address
-            Name (_PRW, Package (0x02)  // _PRW: Power Resources for Wake
-            {
-                0x09, 
-                0x03
-            })
         }
     }
 
-    Scope (_SB.PCI0.SATA)
+    Device (_SB.PCI0.SATA)
     {
+        Name (_ADR, 0x001F0002)  // _ADR: Address
         Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
         {
             If ((Arg2 == Zero))
@@ -280,30 +251,15 @@ DefinitionBlock ("", "SSDT", 1, "vulgo", "h97nwifi", 0x0000FFFF)
                 "pci8086,8c83"
             })
         }
+    }
 
-        Device (PRT4)
-        {
-            Name (_ADR, 0x0004FFFF)  // _ADR: Address
-        }
-
-        Device (PRT5)
-        {
-            Name (_ADR, 0x0005FFFF)  // _ADR: Address
-        }
-
+    Scope (_SB.PCI0.SAT0)
+    {
+        Name (_STA, Zero)  // _STA: Status
         Scope (NVM0)
         {
             Name (_STA, Zero)  // _STA: Status
         }
-    }
-
-    Scope (_SB.PCI0.XHC)
-    {
-        Name (_PRW, Package (0x02)  // _PRW: Power Resources for Wake
-        {
-            0x0D, 
-            0x03
-        })
     }
 
     Scope (_SB.PCI0.LPCB)
@@ -330,22 +286,6 @@ DefinitionBlock ("", "SSDT", 1, "vulgo", "h97nwifi", 0x0000FFFF)
             Name (_HID, EisaId ("PNP0C02") /* PNP Motherboard Resources */)  // _HID: Hardware ID
             Name (_STA, One)  // _STA: Status
             Name (_UID, One)  // _UID: Unique ID
-            Name (_GPE, 0x17)  // _GPE: General Purpose Events
-            Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
-            {
-                IO (Decode16,
-                    0x0062,             // Range Minimum
-                    0x0062,             // Range Maximum
-                    0x00,               // Alignment
-                    0x01,               // Length
-                    )
-                IO (Decode16,
-                    0x0066,             // Range Minimum
-                    0x0066,             // Range Maximum
-                    0x00,               // Alignment
-                    0x01,               // Length
-                    )
-            })
             Name (_PRW, Package (0x02)  // _PRW: Power Resources for Wake
             {
                 0x23, 
@@ -398,7 +338,6 @@ DefinitionBlock ("", "SSDT", 1, "vulgo", "h97nwifi", 0x0000FFFF)
         If (((Arg0 == 0x03) || (Arg0 == 0x04)))
         {
             \_SB.PCI0.LPCB.SWAK ()
-            \_SB.PCI0.XHC.XSEL ()
         }
 
         Return (Package (0x02)
@@ -496,11 +435,6 @@ DefinitionBlock ("", "SSDT", 1, "vulgo", "h97nwifi", 0x0000FFFF)
         Name (_STA, Zero)  // _STA: Status
     }
 
-    Scope (_SB.PCI0.IGPU)
-    {
-        Name (_STA, Zero)  // _STA: Status
-    }
-
     Scope (_SB.PCI0.LPCB)
     {
         Scope (CWDT)
@@ -556,6 +490,11 @@ DefinitionBlock ("", "SSDT", 1, "vulgo", "h97nwifi", 0x0000FFFF)
         {
             Name (_STA, Zero)  // _STA: Status
         }
+    }
+
+    Scope (_SB.PCI0.OFX0)
+    {
+        Name (_STA, Zero)  // _STA: Status
     }
 
     Scope (_SB.PCI0.PEG1)

@@ -4,8 +4,6 @@
 <dict>
 	<key>ACPI</key>
 	<dict>
-		<key>AutoMerge</key>
-		<true/>
 		<key>FixHeaders</key>
 		<true/>
 		<key>DSDT</key>
@@ -22,19 +20,19 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>Rename _STA to OSTA</string>
-					<key>Find</key>
-					<data>X1NUQQ==</data>
-					<key>Replace</key>
-					<data>T1NUQQ==</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
 					<string>Rename _PTS to OPTS</string>
 					<key>Find</key>
 					<data>X1BUUw==</data>
 					<key>Replace</key>
 					<data>T1BUUw==</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>Rename _STA to OSTA</string>
+					<key>Find</key>
+					<data>X1NUQQ==</data>
+					<key>Replace</key>
+					<data>T1NUQQ==</data>
 				</dict>
 				<dict>
 					<key>Comment</key>
@@ -46,19 +44,11 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>Rename HECI to IMEI</string>
-					<key>Find</key>
-					<data>SEVDSQ==</data>
-					<key>Replace</key>
-					<data>SU1FSQ==</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>Rename GFX0 to IGPU</string>
+					<string>Rename GFX0 to OFX0</string>
 					<key>Find</key>
 					<data>R0ZYMA==</data>
 					<key>Replace</key>
-					<data>SUdQVQ==</data>
+					<data>T0ZYMA==</data>
 				</dict>
 				<dict>
 					<key>Comment</key>
@@ -75,46 +65,6 @@
 					<data>UEVHUA==</data>
 					<key>Replace</key>
 					<data>R0ZYMA==</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>Rename SAT0 to SATA</string>
-					<key>Find</key>
-					<data>U0FUMA==</data>
-					<key>Replace</key>
-					<data>U0FUQQ==</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>Rename GLAN to IGBE</string>
-					<key>Find</key>
-					<data>R0xBTg==</data>
-					<key>Replace</key>
-					<data>SUdCRQ==</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>Rename _PRW to OPRW</string>
-					<key>Find</key>
-					<data>X1BSVw==</data>
-					<key>Replace</key>
-					<data>T1BSVw==</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>Rename _L09 to OL09</string>
-					<key>Find</key>
-					<data>X0wwOQ==</data>
-					<key>Replace</key>
-					<data>T0wwOQ==</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>Rename _L0D to OL0D</string>
-					<key>Find</key>
-					<data>X0wwRA==</data>
-					<key>Replace</key>
-					<data>T0wwRA==</data>
 				</dict>
 			</array>
 		</dict>
@@ -171,13 +121,27 @@
 		<array>
 			<dict>
 				<key>Comment</key>
-				<string>USB 10.13.4+ by PMHeart</string>
+				<string>USB 10.13.4,10.13.5 by PMHeart</string>
 				<key>Find</key>
 				<data>g32UDw+DlwQAAA==</data>
+				<key>MatchOS</key>
+				<string>10.13.4,10.13.5</string>
 				<key>Name</key>
 				<string>com.apple.driver.usb.AppleUSBXHCI</string>
 				<key>Replace</key>
 				<data>g32UD5CQkJCQkA==</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>USB 10.13.6+ by PMHeart &amp; FredWst</string>
+				<key>Find</key>
+				<data>g32IDw+DpwQAAA==</data>
+				<key>MatchOS</key>
+				<string>10.13.6</string>
+				<key>Name</key>
+				<string>com.apple.driver.usb.AppleUSBXHCI</string>
+				<key>Replace</key>
+				<data>g32ID5CQkJCQkA==</data>
 			</dict>
 		</array>
 	</dict>
