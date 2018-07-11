@@ -6,20 +6,15 @@ the settings in /efi/clover/config.plist
 Summary
 
 XOSI method (RehabMan)
-New devices for table-dropped TZ00 and TZ01
+New/renamed devices: ARPT GIGE HDAU MCHC SATA
+New dummy EC device for AppleBusPowerController
+Add "HDMI audio" properties for GFX0 and HDAU
+Add "layout-id" device property for HDEF
 Add "compatible" device property for LPCB
 Add "compatible" device property for SATA
-Define 2 new SATA ports
-New MCHC device
-New HDAU device
-Add HDMI audio properties
-Add "layout-id" device property for HDEF
-Rename RP04.PXSX to GIGE
-Rename RP05.PXSX to ARPT
-New dummy EC device for AppleBusPowerController
 Add SBUS device properties and BUS0 device (Master Chief)
 New _STA objects
-New _PTS and _WAK methods
+New _PTS and _WAK methods 
 
 Sources
 
