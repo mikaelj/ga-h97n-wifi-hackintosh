@@ -221,11 +221,6 @@ DefinitionBlock ("", "SSDT", 1, "vulgo", "h97nwifi", 0x0000FFFF)
         Device (GIGE)
         {
             Name (_ADR, Zero)  // _ADR: Address
-            Name (_PRW, Package (0x02)  // _PRW: Power Resources for Wake
-            {
-                0x09, 
-                0x03
-            })
         }
     }
 
