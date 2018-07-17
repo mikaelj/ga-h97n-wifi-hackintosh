@@ -5,7 +5,7 @@
 Clover configuration for running macOS on the Gigabyte GA-H97N-WIFI motherboard.
 
 <p align="center">
-<img alt="H97N-WIFI Hackintosh" src="https://github.com/vulgo/ga-h97n-wifi-hackintosh/raw/master/Images/h97n-wifi.png" width="72%">
+<img alt="H97N-WIFI Box" src="https://github.com/vulgo/ga-h97n-wifi-hackintosh/raw/master/Images/h97n-wifi.png" width="72%">
 </p>
 
 - Discrete AMD or NVIDIA graphics
@@ -19,7 +19,7 @@ Intel integrated graphics will be disabled with these settings.
 ## Firmware Settings
 
 <p align="center">
-<img alt="H97N WIFI" src="https://github.com/vulgo/ga-h97n-wifi-hackintosh/raw/master/Images/bios.png" width="58%">
+<img alt="Aptio UEFI BIOS Screenshot" src="https://github.com/vulgo/ga-h97n-wifi-hackintosh/raw/master/Images/bios.png" width="58%">
 </p>
 
 Make the following changes after loading Optimized Defaults.
@@ -37,7 +37,7 @@ Not using onboard audio? Disable it.
 ## Kernel Extensions
 
 <p align="center">
-<img alt="Hackintosh kexts for GA-H97N-WIFI" src="https://github.com/vulgo/ga-h97n-wifi-hackintosh/raw/master/Images/kexts.png" />
+<img alt="GA-H97N-WIFI Hackintosh Kexts" src="https://github.com/vulgo/ga-h97n-wifi-hackintosh/raw/master/Images/kexts.png" />
 </p>
 
 #### AppleALC.kext
