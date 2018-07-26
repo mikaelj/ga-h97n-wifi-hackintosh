@@ -2,7 +2,7 @@
 
 ## About
 
-Clover configuration for running macOS on the Gigabyte GA-H97N-WIFI motherboard.
+Clover configuration for running macOS on the Gigabyte GA-H97N-WIFI motherboard. There is a guide [here](https://hackintosher.com/forums/thread/guide-10-13-h97n-wifi-hackintosh.481/).
 
 <p align="center">
 <img alt="H97N-WIFI Box" src="https://github.com/vulgo/ga-h97n-wifi-hackintosh/raw/master/Images/h97n-wifi.png" width="72%">
