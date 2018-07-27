@@ -18,3 +18,27 @@ HS11    USB 2 Internal Headers
 HS12    USB 2 Internal Headers
 HS13    USB 2 Internal Headers
 HS14    USB 2 Internal Headers
+
+USB 3 Port Locations:
+
+SS01    USB 3 Internal Header
+SS02    USB 3 Internal Header
+SS03    Rear Panel USB 3 Connector
+SS04    Rear Panel USB 3 Connector
+SS05    Rear Panel USB 3 Connector
+SS06    Rear Panel USB 3 Connector
+
+15 Port Limit
+
+A USB Port Limit Patch is required if you have more
+than 15 USB ports per controller... Each OS update
+may require a new port limit patch. Disable the
+ports you aren't using by removing them from
+USBPortInjector.kext/Contents/Info.plist
+
+Example:
+
+If you are not using the internal 2.0 headers, then
+removing HS05,HS06,HS11,HS12,HS13,HS14 = 14 ports.
+
+Any port limit patch can then also be removed
