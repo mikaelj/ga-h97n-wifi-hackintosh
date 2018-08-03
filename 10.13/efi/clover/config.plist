@@ -6,6 +6,8 @@
 	<dict>
 		<key>FixHeaders</key>
 		<true/>
+		<key>FixMCFG</key>
+		<true/>
 		<key>DSDT</key>
 		<dict>
 			<key>Patches</key>
