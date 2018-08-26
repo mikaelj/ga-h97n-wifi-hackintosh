@@ -8,16 +8,18 @@ HS01    USB 3 Internal Header
 HS02    USB 3 Internal Header
 HS03    Rear Panel USB 3 Connector
 HS04    Rear Panel USB 3 Connector
-HS05    USB 2 Internal Headers
-HS06    USB 2 Internal Headers
+HS05    USB 2 Internal *
+HS06    USB 2 Internal *
 HS07    Rear Panel USB 2 Connector
 HS08    Rear Panel USB 2 Connector
 HS09    Rear Panel USB 3 Connector
 HS10    Rear Panel USB 3 Connector
-HS11    USB 2 Internal Headers
-HS12    USB 2 Internal Headers
-HS13    USB 2 Internal Headers
-HS14    USB 2 Internal Headers
+HS11    USB 2 Internal *
+HS12    USB 2 Internal *
+HS13    USB 2 Internal *
+HS14    USB 2 Internal *
+
+* either 9 pin connector or mini PCIe, untested
 
 USB 3 Port Locations:
 
@@ -38,7 +40,7 @@ USBPortInjector.kext/Contents/Info.plist
 
 Example:
 
-If you are not using the internal 2.0 headers, then
+If you are not using the internal 2.0 ports, then
 removing HS05,HS06,HS11,HS12,HS13,HS14 = 14 ports.
 
 Any port limit patch can then also be removed
