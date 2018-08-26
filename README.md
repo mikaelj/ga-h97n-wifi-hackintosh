@@ -27,10 +27,6 @@ Make the following changes after loading Optimized Defaults.
 - Peripherals -> XHCI Mode -> "Enabled"
 - Peripherals -> Intel Processor Graphics -> "Disabled"
 
-Not using onboard audio? Disable it.
-
-- Peripherals -> Audio Controller -> "Disabled"
-
 <br />
 <br />
 
@@ -42,10 +38,9 @@ Not using onboard audio? Disable it.
 
 #### AppleALC.kext
 
-- Enables onboard Realtek audio
-- Enables additional NVIDIA HDMI audio devices
+- Digital and analog audio support starting from the OS installation
 
-AppleALC.kext is a plug-in of Lilu.kext. If you are not using NVIDIA graphics, and not using onboard audio then you do not need AppleALC.kext.
+AppleALC.kext is a Lilu plugin and does nothing without Lilu.kext.
 
 #### FakeSMC.kext
 
