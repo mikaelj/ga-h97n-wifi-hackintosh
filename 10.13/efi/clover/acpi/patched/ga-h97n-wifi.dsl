@@ -102,112 +102,11 @@ DefinitionBlock ("", "SSDT", 1, "vulgo", "h97nwifi", 0x0000FFFF)
         }
     }
 
-    Scope (_SB.PCI0.HDEF)
-    {
-        Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
-        {
-            If ((Arg2 == Zero))
-            {
-                Return (Buffer (One)
-                {
-                     0x03                                             // .
-                })
-            }
-
-            Return (Package (0x02)
-            {
-                "layout-id", 
-                Buffer (0x04)
-                {
-                     0x03, 0x00, 0x00, 0x00                           // ....
-                }
-            })
-        }
-    }
-
     Scope (_SB.PCI0.P0P2)
     {
-        Scope (GFX0)
-        {
-            Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
-            {
-                If ((Arg2 == Zero))
-                {
-                    Return (Buffer (One)
-                    {
-                         0x03                                             // .
-                    })
-                }
-
-                Return (Package (0x0E)
-                {
-                    "hda-gfx", 
-                    Buffer (0x02)
-                    {
-                         0x01, 0xFF                                       // ..
-                    }, 
-
-                    "@0,connector-type", 
-                    Buffer (0x04)
-                    {
-                         0x00, 0x08, 0x00, 0x00                           // ....
-                    }, 
-
-                    "@1,connector-type", 
-                    Buffer (0x04)
-                    {
-                         0x00, 0x08, 0x00, 0x00                           // ....
-                    }, 
-
-                    "@2,connector-type", 
-                    Buffer (0x04)
-                    {
-                         0x00, 0x08, 0x00, 0x00                           // ....
-                    }, 
-
-                    "@3,connector-type", 
-                    Buffer (0x04)
-                    {
-                         0x00, 0x08, 0x00, 0x00                           // ....
-                    }, 
-
-                    "@4,connector-type", 
-                    Buffer (0x04)
-                    {
-                         0x00, 0x08, 0x00, 0x00                           // ....
-                    }, 
-
-                    "@5,connector-type", 
-                    Buffer (0x04)
-                    {
-                         0x00, 0x08, 0x00, 0x00                           // ....
-                    }
-                })
-            }
-        }
-
         Device (HDAU)
         {
             Name (_ADR, One)  // _ADR: Address
-            Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
-            {
-                If ((Arg2 == Zero))
-                {
-                    Return (Buffer (One)
-                    {
-                         0x03                                             // .
-                    })
-                }
-
-                Return (Package (0x02)
-                {
-                    "hda-gfx", 
-                    Buffer (0x02)
-                    {
-                         0x01, 0xFF                                       // ..
-                    }
-                })
-            }
         }
     }
 
