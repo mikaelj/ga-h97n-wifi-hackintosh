@@ -101,7 +101,7 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>alcid=3</string>
+		<string></string>
 		<key>IgnoreNVRAMBoot</key>
 		<true/>
 		<key>NeverHibernate</key>

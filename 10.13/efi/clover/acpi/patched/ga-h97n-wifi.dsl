@@ -50,7 +50,6 @@ DefinitionBlock ("", "SSDT", 1, "vulgo", "h97nwifi", 0x0000FFFF)
     External (_SB_.PCI0.LPCB.UAR1, DeviceObj)
     External (_SB_.PCI0.OFX0, DeviceObj)
     External (_SB_.PCI0.P0P2, DeviceObj)
-    External (_SB_.PCI0.P0P2.GFX0, DeviceObj)
     External (_SB_.PCI0.PEG1, DeviceObj)
     External (_SB_.PCI0.PEG2, DeviceObj)
     External (_SB_.PCI0.RP02, DeviceObj)
@@ -99,6 +98,28 @@ DefinitionBlock ("", "SSDT", 1, "vulgo", "h97nwifi", 0x0000FFFF)
         Device (MCHC)
         {
             Name (_ADR, Zero)  // _ADR: Address
+        }
+    }
+    
+    Scope (_SB.PCI0.HDEF)
+    {
+        Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+        {
+            If ((Arg2 == Zero))
+            {
+                Return (Buffer (One)
+                {
+                     0x03                                             // .
+                })
+            }
+             Return (Package (0x02)
+            {
+                "layout-id", 
+                Buffer (0x04)
+                {
+                     0x03, 0x00, 0x00, 0x00                           // ....
+                }
+            })
         }
     }
 

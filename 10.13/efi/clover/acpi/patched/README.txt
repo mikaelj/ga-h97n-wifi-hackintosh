@@ -8,6 +8,7 @@ Summary
 XOSI method (RehabMan)
 New/renamed devices: ARPT, GIGE, HDAU, MCHC, SATA
 Add "compatible" device properties for: LPCB, SATA
+Add "layout-id" device property for HDEF
 New dummy EC device for AppleBusPowerController
 Add SBUS device properties and BUS0 device (Master Chief)
 New _STA, _PTS and _WAK objects
