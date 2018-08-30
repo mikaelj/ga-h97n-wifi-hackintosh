@@ -19,7 +19,7 @@ Directories are shown here in UPPERCASE, it's not a requirement
         ├── KEXTS
         │   └── OTHER
         │       ├── AppleALC.kext
-        │       ├── FakeSMC.kext
+        │       ├── FakeSMC.kext or VirtualSMC.kext
         │       ├── Lilu.kext
         │       ├── RealtekRTL8111.kext or AtherosE2200Ethernet.kext *
         │       └── USBPortInjector.kext ←

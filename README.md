@@ -42,9 +42,9 @@ Make the following changes after loading Optimized Defaults.
 
 AppleALC.kext is a Lilu plugin and does nothing without Lilu.kext.
 
-#### FakeSMC.kext
+#### FakeSMC.kext or VirtualSMC.kext
 
-- FakeSMC.kext is absolutely necessary
+- Choose one of these, SMC emulation is mandatory
 
 #### Lilu.kext
 
@@ -89,6 +89,10 @@ If you are not using any Lilu plug-ins then you do not need Lilu.kext.
 #### FakeSMC.kext
 
 [https://bitbucket.org/RehabMan/os-x-fakesmc-kozlek/downloads/](https://bitbucket.org/RehabMan/os-x-fakesmc-kozlek/downloads/)
+
+#### VirtualSMC.kext
+
+[https://github.com/acidanthera/VirtualSMC/releases](https://github.com/acidanthera/VirtualSMC/releases)
 
 #### Lilu.kext
 
