@@ -49,6 +49,7 @@ AppleALC.kext is a Lilu plugin and does nothing without Lilu.kext.
 #### Lilu.kext
 
 - Required by AppleALC.kext
+- Enables additional features of VirtualSMC.kext
 
 If you are not using any Lilu plug-ins then you do not need Lilu.kext.
 
