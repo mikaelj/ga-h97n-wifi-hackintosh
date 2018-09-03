@@ -38,7 +38,7 @@ Make the following changes after loading Optimized Defaults.
 
 #### AppleALC.kext
 
-- Digital and analog audio support starting from the OS installation
+- Digital and analog audio support from vit9696
 
 AppleALC.kext is a Lilu plugin and does nothing without Lilu.kext.
 
@@ -48,6 +48,7 @@ AppleALC.kext is a Lilu plugin and does nothing without Lilu.kext.
 
 #### Lilu.kext
 
+- Arbitrary kext, library, and program patching from vit9696
 - Required by AppleALC.kext
 - Enables additional features of VirtualSMC.kext
 
