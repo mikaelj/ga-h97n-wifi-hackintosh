@@ -102,8 +102,6 @@
 	<dict>
 		<key>Arguments</key>
 		<string></string>
-		<key>IgnoreNVRAMBoot</key>
-		<true/>
 		<key>NeverHibernate</key>
 		<true/>
 	</dict>
