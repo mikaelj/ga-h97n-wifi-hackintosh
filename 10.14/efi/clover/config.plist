@@ -142,6 +142,8 @@
 	</dict>
 	<key>SMBIOS</key>
 	<dict>
+		<key>Board-ID</key>
+		<string>Mac-7DF2A3B5E5D671ED</string>
 		<key>ProductName</key>
 		<string>iMac14,2</string>
 		<key>Trust</key>
