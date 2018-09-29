@@ -24,6 +24,14 @@ Intel integrated graphics will be disabled with these settings.
 
 Make the following changes after loading Optimized Defaults.
 
+#### 10.14
+
+- Peripherals -> XHCI Mode -> "Enabled"
+- Peripherals -> Intel Processor Graphics Memory Allocation -> "32M"
+- Peripherals -> Intel Processor Graphics Total Memory Size -> "MAX"
+
+#### 10.13
+
 - Peripherals -> XHCI Mode -> "Enabled"
 - Peripherals -> Intel Processor Graphics -> "Disabled"
 
