@@ -46,11 +46,19 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>Rename GFX0 to OFX0</string>
+					<string>Rename GFX0 to IGPU</string>
 					<key>Find</key>
 					<data>R0ZYMA==</data>
 					<key>Replace</key>
-					<data>T0ZYMA==</data>
+					<data>SUdQVQ==</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>Rename HECI to IMEI</string>
+					<key>Find</key>
+					<data>TUVJXw==</data>
+					<key>Replace</key>
+					<data>SU1FSQ==</data>
 				</dict>
 				<dict>
 					<key>Comment</key>
@@ -142,8 +150,6 @@
 	</dict>
 	<key>SMBIOS</key>
 	<dict>
-		<key>Board-ID</key>
-		<string>Mac-7DF2A3B5E5D671ED</string>
 		<key>ProductName</key>
 		<string>iMac14,2</string>
 		<key>Trust</key>
