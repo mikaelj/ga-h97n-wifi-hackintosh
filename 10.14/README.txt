@@ -26,10 +26,7 @@ Directories are shown here in UPPERCASE, it's not a requirement
         │       └── WhatEvergreen.kext
         ├── MISC
         └── TOOLS
-            ├── Shell.inf
-            ├── Shell64.efi
-            ├── Shell64U.efi
-            └── bdmesg.efi
+            └── Shell64U.efi
 
 
 ←   A file in this repository
