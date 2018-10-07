@@ -122,8 +122,6 @@
 	<dict>
 		<key>Inject</key>
 		<false/>
-		<key>RadeonDeInit</key>
-		<true/>
 	</dict>
 	<key>KernelAndKextPatches</key>
 	<dict>

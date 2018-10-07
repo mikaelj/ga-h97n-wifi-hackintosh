@@ -23,6 +23,7 @@ Directories are shown here in UPPERCASE, it's not a requirement
         │       ├── Lilu.kext
         │       ├── RealtekRTL8111.kext or AtherosE2200Ethernet.kext *
         │       └── USBPortInjector.kext ←
+        │       └── WhatEvergreen.kext
         ├── MISC
         └── TOOLS
             ├── Shell.inf

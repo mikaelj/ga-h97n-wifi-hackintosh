@@ -11,8 +11,6 @@ Clover configuration for running macOS on the Gigabyte GA-H97N-WIFI motherboard.
 - Discrete AMD or NVIDIA graphics
 - Native EFI booting with Clover
 
-Intel integrated graphics will be disabled with these settings.
-
 <br />
 <br />
 
@@ -57,7 +55,7 @@ AppleALC.kext is a Lilu plugin and does nothing without Lilu.kext.
 #### Lilu.kext
 
 - Arbitrary kext, library, and program patching from vit9696
-- Required by AppleALC.kext
+- Required by AppleALC.kext and WhateverGreen.kext
 - Enables additional features of VirtualSMC.kext
 
 If you are not using any Lilu plug-ins then you do not need Lilu.kext.
@@ -70,6 +68,11 @@ If you are not using any Lilu plug-ins then you do not need Lilu.kext.
 #### USBPortInjector.kext
 
 - Codeless injector kext for the XHC device USB ports
+
+#### WhateverGreen.kext
+
+- Lilu plugin providing patches to select GPUs on macOS
+- Recommended for 10.14+ graphics setup/configuration, unless you know another way.
 
 <br />
 <br />
@@ -111,5 +114,9 @@ If you are not using any Lilu plug-ins then you do not need Lilu.kext.
 #### AtherosE220Ethernet.kext, IntelMausiEthernet.kext or RealtekRTL8111.kext
 
 [https://www.insanelymac.com/forum/files/category/5-lan-and-wireless/](https://www.insanelymac.com/forum/files/category/5-lan-and-wireless/)
+
+#### WhateverGreen.kext
+
+[https://github.com/acidanthera/WhateverGreen/releases](https://github.com/acidanthera/WhateverGreen/releases)
 
 
